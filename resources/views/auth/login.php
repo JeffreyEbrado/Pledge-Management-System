@@ -3,7 +3,7 @@
         </div>
         
         <form class="input_panel center_all_in_one_direction">
-            <label class="label">ID</label>
+            <label class="label">CITE ID</label>
             <input type="text" name="id" class="id_textfield">
             <label class="label2">Password</label>
             <input type="password" name="password" class="id_textfield">
