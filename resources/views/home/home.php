@@ -1,12 +1,6 @@
+ <label class="HomePg_label">Pledge Management System</label>
+ <div class="Home_btn_panel center_all">
+    <a style="background-color: white;" class="home_btn login center_all" href="?search=login">Login</a>
+    <a class="home_btn register center_all" href="?search=register">Register</a>
+ </div>
 <?php
-$title = __('home', 'en'); 
-$lang = 'en'; 
-ob_start();
-?>
-
-<h1><?php echo __('welcome', $lang); ?></h1>
-<p><?php echo __('home', $lang); ?></p>
-
-<?php
-$content = ob_get_clean();
-include __DIR__ . '/../layouts/main.php';
