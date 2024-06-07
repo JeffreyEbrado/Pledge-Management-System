@@ -23,5 +23,7 @@
     </div>
 
     <?php include __DIR__ . '/../partials/footer.php'; ?>
+    
+    <script src="public/js/script.js"></script>
 </body>
 </html>

@@ -1,32 +1,31 @@
 <?php
     require "app/controller/PagesController.php";
     require "config/uri/uri_setter.php";
+    require "app/model/access db/init_database.php";
 
-    $pagesControlller = new PagesController();
+    $pagesController = new PagesController();
     $URISegments = explode("/", $_SERVER["REQUEST_URI"]);
 
-    if(array_key_exists(2, $URISegments)){
+    if (array_key_exists(2, $URISegments)) {
         $requestedPage = $URISegments[2];
 
-        switch($requestedPage):
+        switch ($requestedPage) {
             case "home":
-                $pagesControlller->home();
+                $pagesController->home();
                 break;
             case "login":
-                $pagesControlller->login();
+                $pagesController->login();
                 break;
             case "register":
-                $pagesControlller->register();
+                $pagesController->register();
                 break;
             case "system":
-                $pagesControlller->system();
+                $pagesController->system();
                 break;
-            default: 
-                $pagesControlller->error(404);
-        endswitch;
-
+            default:
+                $pagesController->error(404);
+        }
     } else {
         echo "condition failed to meet";
     }
-       
 ?>

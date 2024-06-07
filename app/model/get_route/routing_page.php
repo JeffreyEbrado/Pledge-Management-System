@@ -1,6 +1,6 @@
 <?php
 
-  require 'routes/web.php';
+require 'routes/web.php';
 
 // Get the requested page from the URI
 $uri = $_SERVER['REQUEST_URI'];
@@ -13,10 +13,6 @@ $page = $uriSegments[1] ?? 'home';
 if (!array_key_exists($page, $routes)) {
     $page = 'home';
 }
-
-// Set the title based on the requested page 
-$title = ucfirst($page) . ' - Pledge Management System';
-$_SESSION['title_tag'] = $title;
 
 // Correct the path to the view files
 $folder_dir_temp = "'/../../../'" . $routes[$page];
