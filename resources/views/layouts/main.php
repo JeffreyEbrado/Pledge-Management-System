@@ -24,6 +24,6 @@
 
     <?php include __DIR__ . '/../partials/footer.php'; ?>
     
-    <script src="public/js/script.js"></script>
+    <script src="public/js/functions/script.js"></script>
 </body>
 </html>

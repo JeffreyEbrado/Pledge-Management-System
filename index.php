@@ -1,7 +1,7 @@
 <?php
     require "app/controller/PagesController.php";
     require "config/uri/uri_setter.php";
-    require "app/model/access db/init_database.php";
+    require "app/model/access_db/init_database.php";
 
     $pagesController = new PagesController();
     $URISegments = explode("/", $_SERVER["REQUEST_URI"]);
@@ -12,6 +12,9 @@
         switch ($requestedPage) {
             case "home" || "login" || "register" || "system":
                 $pagesController->main();
+                break;
+            case "register_process":
+                $pagesController->registerProcess();
                 break;
             default:
                 $pagesController->error(404);

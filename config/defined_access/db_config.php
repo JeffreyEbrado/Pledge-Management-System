@@ -13,5 +13,5 @@ define('TB_USERS', 'Registered_Students');
 define('SQL_FILEPATH', 'app/model/sql/query.sql');
 
 // XAMPP version
-define('XAMPP_VERSION', 'your_xampp_version');
+define('XAMPP_VERSION', 'xampp_version');
 ?>

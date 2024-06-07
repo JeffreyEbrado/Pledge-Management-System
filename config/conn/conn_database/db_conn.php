@@ -1,4 +1,5 @@
 <?php
+
 $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, '', DB_PORT);
 
 if ($conn->connect_error) {
@@ -20,11 +21,4 @@ if ($result->num_rows == 0) {
 
 // Close the initial connection
 $conn->close();
-
-// Reconnect to the newly created database
-$conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
-
-if ($conn->connect_error) {
-    die("Reconnection failed: " . $conn->connect_error);
-}
 ?>
