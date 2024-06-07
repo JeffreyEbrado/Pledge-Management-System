@@ -10,20 +10,12 @@
         $requestedPage = $URISegments[2];
 
         switch ($requestedPage) {
-            case "home":
-                $pagesController->home();
-                break;
-            case "login":
-                $pagesController->login();
-                break;
-            case "register":
-                $pagesController->register();
-                break;
-            case "system":
-                $pagesController->system();
+            case "home" || "login" || "register" || "system":
+                $pagesController->main();
                 break;
             default:
                 $pagesController->error(404);
+                break;
         }
     } else {
         echo "condition failed to meet";

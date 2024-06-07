@@ -1,21 +1,8 @@
 <?php
   class PagesController{
 
-        function home(){
-            require "./app/view/home.php";
-        }
-    
-        function login(){
-            require "./app/view/login.php";
-        }
-
-        function register(){
-            require "./app/view/register.php";
-
-        }
-
-        function system(){
-            require "./app/view/system.php";
+        function main(){
+            require "./app/view/main_view.php";
         }
 
         function error(){
