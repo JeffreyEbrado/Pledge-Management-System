@@ -1,8 +1,8 @@
 -- Create a new database
-CREATE DATABASE IF NOT EXISTS Students_Pledge_Record;
+CREATE DATABASE IF NOT EXISTS Pledge_Data;
 
 -- Use the new database
-USE Students_Pledge_Record;
+USE Pledge_Data;
 
 -- Create table `Students Pledge Record`
 CREATE TABLE IF NOT EXISTS `Students_Pledge_Record` (
