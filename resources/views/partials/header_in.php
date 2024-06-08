@@ -4,7 +4,13 @@
     <?php
      session_start();
      if(file_exists('app/model/access_db/get_profile.php')){
-        require "app/model/access_db/get_profile.php";
+        if($_SESSION['status'] === 'student'){
+            require "app/model/access_db/get_profile.php";
+        }  
+     }
+
+     if($_SESSION['status'] === 'admin'){
+        echo "<img class='profile_view' src='public/images/admin_logo.png'>";
      }
     ?>
     </div6>    

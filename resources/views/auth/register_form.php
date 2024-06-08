@@ -13,7 +13,7 @@
     <input type="password" id="input_password" name="register_password" class="username_textfield" required>
     <label class="label_confirmpass">Confirm Password</label>
     <input type="password" id="input_retypepassword" name="register_ReTypePassword" class="username_textfield" required>
-    <label class="upload_img_label">Upload Image</label>
+    <label class="upload_img_label">Profile Picture</label>
     <input class="img_upload" id="input_image" type="file" accept=".jpg, .jpeg, .png" name="profile" class="image_upload" required>
     <button type="submit" class="submit_button">Submit</button>
 </form>

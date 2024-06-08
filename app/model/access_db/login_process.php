@@ -3,7 +3,7 @@ session_start();
 require "../../../config/defined_access/db_config.php";
 
 // Create connection
-$conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
+$conn = new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME, $DB_PORT);
 
 // Check connection
 if ($conn->connect_error) {
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hardcoded_password = $conn->real_escape_string($_POST['hardcoded_password']);
 
     // SQL query to select data
-    $sql1 = "SELECT firstname, lastname, cite_id, image, status, password FROM Registered_Users";
+    $sql1 = "SELECT firstname, lastname, cite_id, image, status, password FROM " . $TB_USERS;
     $resultusers = $conn->query($sql1);
 
     $loginSuccessful = false;

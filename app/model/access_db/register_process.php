@@ -2,7 +2,7 @@
 require "../../../config/defined_access/db_config.php";
 
 // Create connection
-$conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
+$conn = new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME, $DB_PORT);
 
 // Check connection
 if ($conn->connect_error) {
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
     
-    $sql1 = "SELECT cite_id FROM " . TB_USERS;
+    $sql1 = "SELECT cite_id FROM " . $TB_USERS;
     $resultusers = $conn->query($sql1);
     
     if ($resultusers->num_rows > 0) {
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Insert into database
-        $stmt = $conn->prepare("INSERT INTO Registered_Users (firstname, lastname, cite_id, image, status, password) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO ". $TB_USERS ." (firstname, lastname, cite_id, image, status, password) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssss", $firstname, $lastname, $cite_id, $imageData, $status, $password);
 
         if ($stmt->execute()) {

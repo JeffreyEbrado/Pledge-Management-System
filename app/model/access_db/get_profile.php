@@ -1,4 +1,7 @@
 <?php
+
+require "config/defined_access/db_config.php";
+
 $dbhost = 'localhost';
 $dbusername = 'root';
 $dbpassword = '';
