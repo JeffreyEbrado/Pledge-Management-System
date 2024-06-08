@@ -7,11 +7,11 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'Pledge_Data');
 define('TB_STUDENTS', 'Students_Pledge_Record');
-define('TB_USERS', 'Registered_Students');
+define('TB_USERS', 'Registered_Users');
 
 //Sql File Path
 define('SQL_FILEPATH', 'app/model/sql/query.sql');
 
 // XAMPP version
-define('XAMPP_VERSION', 'xampp_version');
+define('XAMPP_VERSION', 'v3.3.0');
 ?>
