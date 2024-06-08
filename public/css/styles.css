@@ -96,7 +96,8 @@ a {
 
 
 /*----------------------------------------------------------------------------------------HEADER----------------------------------------------------------------------------------------*/
-header {
+header1,
+header2 {
   position: absolute;
   height: 50px;
   width: 100%;
@@ -111,7 +112,23 @@ header {
   justify-content: flex-start;
 }
 
+.profile_container {
+  height: 80%;
+  width: 40px;
+  border-radius: 20px;
+  background-color: white;
+  margin-left: 30px; /* Add margin to create space */
+  overflow: hidden; /* Ensure the image doesn't overflow */
+
+  display: flex;
+  justify-content: center;
+}
+
 .picture_view {
+ object-fit: cover;
+}
+
+.logo_view{
   height: 80%;
   width: 40px;
   border-radius: 20px;
@@ -120,6 +137,7 @@ header {
   overflow: hidden; /* Ensure the image doesn't overflow */
 }
 
+
 .fullname {
   margin-left: 20px;
 }
@@ -127,6 +145,10 @@ header {
 .fullname_input {
   padding-left: 10px;
   cursor: pointer;
+}
+
+.status {
+  color: white;
 }
 
 .logout_button {
@@ -171,6 +193,7 @@ header {
  color:rgb(223, 166, 11)
 }
 /*----------------------------------------------------------------------------error indicator in register part css---------------------------------------------------------------------------------------*/
-#responseMessage {
+#responseMessageRegister,
+#responseMessageLogin {
   color: yellow;
 }

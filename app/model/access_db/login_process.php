@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "../../../config/defined_access/db_config.php";
 
 // Create connection
@@ -10,35 +11,45 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $cite_id = $_POST['login_citeid'];
-    $password = $_POST['login_password'];
+    // Retrieve and sanitize input data
+    $hardcoded_citeid = $conn->real_escape_string($_POST['hardcoded_citeid']);
+    $hardcoded_password = $conn->real_escape_string($_POST['hardcoded_password']);
 
-    $sql = "SELECT cite_id, password, status FROM " . TB_USERS . " WHERE cite_id = ?";
+    // SQL query to select data
+    $sql1 = "SELECT firstname, lastname, cite_id, image, status, password FROM Registered_Users";
+    $resultusers = $conn->query($sql1);
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $cite_id);
-    $stmt->execute();
-    $stmt->store_result();
+    $loginSuccessful = false;
+    $invalidPassword = false;
 
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($db_cite_id, $db_password, $db_status);
-        $stmt->fetch();
+    while($row = $resultusers->fetch_assoc()) {
+        if($hardcoded_citeid === $row['cite_id']) {
+            if ($hardcoded_password === $row['password']) {
+                
+                $_SESSION['fullname'] = $row['firstname'] . " " . $row['lastname'];
+                $_SESSION['status'] = $row['status'];
+                $_SESSION['cite_id'] = $row['cite_id'];
 
-        if ($password === $db_password) {
-            // Password match, set Cite ID and status in session
-            session_start();
-            $_SESSION['cite_id'] = $db_cite_id;
-            $_SESSION['status'] = $db_status;
+                $imageData = $row['image'];
+                header("Content-type: image/png");
+                $_SESSION['profile_image'] = $imageData;
 
-            echo json_encode(["message" => "Login successful"]);
-        } else {
-            echo json_encode(["message" => "Incorrect password"]);
+                echo json_encode(["message" => "Login successfully."]);
+                $loginSuccessful = true;
+                break;
+            } else {
+                $invalidPassword = true;
+            }
         }
-    } else {
-        echo json_encode(["message" => "Cite ID not found"]);
     }
 
-    $stmt->close();
+    if (!$loginSuccessful) {
+        if ($invalidPassword) {
+            echo json_encode(["message" => "Invalid password."]);
+        } else {
+            echo json_encode(["message" => "Account didn't exist."]);
+        }
+    }
 }
 
 $conn->close();

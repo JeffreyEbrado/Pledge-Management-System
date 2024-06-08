@@ -8,13 +8,13 @@
 
     if (array_key_exists(2, $URISegments)) {
         $requestedPage = $URISegments[2];
+        $_SESSION['requestedPage'] = $requestedPage;
+
+        require "app/model/view_manipulator/header_setter.php";
 
         switch ($requestedPage) {
             case "home" || "login" || "register" || "system":
                 $pagesController->main();
-                break;
-            case "register_process":
-                $pagesController->registerProcess();
                 break;
             default:
                 $pagesController->error(404);

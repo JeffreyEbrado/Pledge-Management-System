@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Insert into database
-        $stmt = $conn->prepare("INSERT INTO Registered_Students (firstname, lastname, cite_id, image, status, password) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO Registered_Users (firstname, lastname, cite_id, image, status, password) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssss", $firstname, $lastname, $cite_id, $imageData, $status, $password);
 
         if ($stmt->execute()) {

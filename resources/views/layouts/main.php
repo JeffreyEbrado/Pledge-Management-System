@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="public/css/styles.css">
 </head>
 <body>
+    <!--HEADER-->
     <?php
-     include __DIR__ . '/../partials/header_out.php';  
+     if($_SESSION['header_tracker'] === 'out'){
+        include __DIR__ . '/../partials/header_out.php';      
+     } 
+
+     if ($_SESSION['header_tracker'] === 'in'){
+        include __DIR__ . '/../partials/header_in.php';  
+     }
      ?>
 
+     <!--MAIN-CONTAINER-->
     <div class="main_container">
         <?php
         if (file_exists('app/model/get_route/routing_page.php')) {
@@ -22,8 +30,6 @@
         ?>
     </div>
 
-    <?php include __DIR__ . '/../partials/footer.php'; ?>
-    
     <script src="public/js/functions/script.js"></script>
 </body>
 </html>

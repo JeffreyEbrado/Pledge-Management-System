@@ -9,16 +9,23 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     xhr.onload = function() {
         if (xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);
-            document.getElementById('responseMessage').textContent = response.message;
+            document.getElementById('responseMessageRegister').textContent = response.message;
 
             // Redirect to login page after a successful registration
             if (response.message === 'Registration successful.') {
                 setTimeout(function() {
                     window.location.href = 'index.php?search=login';
                 }, 1000);
+
+                // Clear all input fields in the form
+                var inputs = document.querySelectorAll('#registerForm input');
+                inputs.forEach(function(input) {
+                   input.value = '';
+                });      
+
             }
         } else {
-            document.getElementById('responseMessage').textContent = 'An error occurred!';
+            document.getElementById('responseMessageRegister').textContent = 'An error occurred!';
         }
     };
 
