@@ -10,7 +10,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(to bottom right, darkred, rgb(0, 0, 0));
+  background-image: linear-gradient(to bottom right, rgb(13, 104, 241), rgb(243, 232, 184));
 }
 
 /*free to call as class*/
@@ -30,7 +30,7 @@
 /*1. display_details*/
 .display_details {
     font-size: 40px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin-bottom: 3vh;
 }
 
@@ -94,6 +94,17 @@ a {
   margin-right: 70%;
 }
 
+.class_container{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.247));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.185); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+
+    
+    padding: 1% 5%;
+}
 
 
 /*----------------------------------------------------------------------------------------HEADER----------------------------------------------------------------------------------------*/
@@ -204,5 +215,5 @@ header2 {
 /*--------------------------------table--------------------------*/
 
 table {
-  color: white;
+  color: rgb(0, 0, 0);
 }
