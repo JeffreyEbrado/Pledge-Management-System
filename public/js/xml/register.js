@@ -4,14 +4,13 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     var formData = new FormData(this);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'app/model/access_db/register_process.php', true);
+    xhr.open('POST', 'app/model/access_db/process/register_process.php', true);
 
     xhr.onload = function() {
         if (xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);
             document.getElementById('responseMessageRegister').textContent = response.message;
 
-            // Redirect to login page after a successful registration
             if (response.message === 'Registration successful.') {
                 setTimeout(function() {
                     window.location.href = 'index.php?search=login';
