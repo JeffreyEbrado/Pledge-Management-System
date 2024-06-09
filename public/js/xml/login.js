@@ -4,7 +4,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var formData = new FormData(this);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'app/model/access_db/login_process.php', true);
+    xhr.open('POST', 'app/model/access_db/process/login_process.php', true);
 
     xhr.onload = function() {
         if (xhr.status === 200) {

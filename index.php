@@ -1,7 +1,7 @@
 <?php
     require "app/controller/PagesController.php";
     require "config/uri/uri_setter.php";
-    require "app/model/access_db/init_database.php";
+    require "app/model/access_db/process/init_database.php";
 
     $pagesController = new PagesController();
     $URISegments = explode("/", $_SERVER["REQUEST_URI"]);

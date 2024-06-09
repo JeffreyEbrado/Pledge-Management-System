@@ -80,6 +80,7 @@ input {
     color: white;
     background-image: linear-gradient(to bottom right, darkred, rgb(223, 166, 11));
     border: 1px solid black;
+    cursor: pointer;
 }
 
 /*3. label and register text button*/
@@ -194,6 +195,14 @@ header2 {
 }
 /*----------------------------------------------------------------------------error indicator in register part css---------------------------------------------------------------------------------------*/
 #responseMessageRegister,
-#responseMessageLogin {
+#responseMessageLogin,
+#responseMessageAddStudent,
+#responseMessageUpdateStudentRecord {
   color: yellow;
+}
+
+/*--------------------------------table--------------------------*/
+
+table {
+  color: white;
 }

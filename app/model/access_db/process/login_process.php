@@ -1,11 +1,9 @@
 <?php
 session_start();
-require "../../../config/defined_access/db_config.php";
+require "../../../../config/defined_access/db_config.php";
 
 // Create connection
 $conn = new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME, $DB_PORT);
-
-
 
 // Check connection
 if ($conn->connect_error) {
@@ -37,11 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['profile_image'] = $imageData;
 
                 echo json_encode(["message" => "Login successfully."]);
-                
-                
-
                 $loginSuccessful = true;
-               
                 break;
             } else {
                 $invalidPassword = true;
@@ -57,9 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-
-
-
 
 $conn->close();
 ?>
