@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `Registered_Users` (
 
 -- Insert sample data into `Students_Pledge_Record`
 INSERT INTO `Students_Pledge_Record` (firstname, lastname, cite_id, pledge, pledgetotal) VALUES
-('Administrator', 'Account', 'admin', '5000', '280000');
+('Jamier', 'Inocando', 'DIET2024-01-167', '0', '280000');
 
 -- Insert sample data into `Registered_Users`
 INSERT INTO `Registered_Users` (firstname, lastname, cite_id, image, status, password) VALUES
