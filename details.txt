@@ -1,0 +1,12 @@
+**List of Members and Contributions:
+Jeffrey Ebrado - Register Part both Backend and Frontend
+Lex Mariun Senagan- Login Part both Backend and Frontend
+Lex Mariun Senagan- DashBoard/System Part both Backend and Frontend
+
+
+**Versions of PHP and XAMPP you used.
+PHP - Current PHP version: 8.2.12
+XAMPP - v3.3.0
+
+**GitHub Link: 
+https://github.com/JeffreyEbrado/Pledge-Management-System
