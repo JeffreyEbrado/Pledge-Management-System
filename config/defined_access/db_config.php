@@ -2,7 +2,7 @@
 
 // Database config
 $DB_HOST = 'localhost';
-$DB_PORT = '3306';
+$DB_PORT = '3307';
 $DB_USERNAME = 'root';
 $DB_PASSWORD = '';
 $DB_NAME = 'Pledge_Data';
